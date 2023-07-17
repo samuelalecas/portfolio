@@ -2,7 +2,7 @@ import { ProjectCard } from "../atoms/ProjectCard.component";
 import { CenterLayout } from "../layouts/CenterLayout.component";
 export const Projects = () => {
   return (
-    <section className="border-t-2 border-violet-200">
+    <section className="w-full border-t-2 border-violet-200">
       <CenterLayout width="900">
         <div className="w-full p-4 py-8 flex flex-col">
           <h1 className="text-4xl mb-6 text-blue-950">Projects</h1>

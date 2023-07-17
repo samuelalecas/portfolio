@@ -4,7 +4,7 @@ import { Button } from "../atoms/Button.component";
 
 export const Contact = () => {
   return (
-    <section className="border-t-2 border-violet-200 h-96">
+    <section className="w-full border-t-2 border-violet-200 h-96">
       <CenterLayout width="900">
         <div className="w-full flex flex-col md:flex-row">
           <div className="w-full md:w-1/3 mr-16">

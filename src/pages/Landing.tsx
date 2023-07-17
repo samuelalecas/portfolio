@@ -7,7 +7,7 @@ import { Projects } from "../components/moleculi/Projects.component";
 
 const Landing = () => {
   return (
-    <div className="max-w-screen max-h-screen">
+    <div className="max-w-screen max-h-screen overflow-scroll">
       <Header />
       <Hero />
       <Projects />
