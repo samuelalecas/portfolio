@@ -33,7 +33,7 @@ const InputText: React.FC<InputProps> = ({ type="text", label, name, value, onCh
           name={name}
           id={name}
           value={value}
-          className={`${inputStyle} ${error? "border-red-600" : "border-gray-300"}`}
+          className={`${inputStyle} ${error? "border-red-600 text-red-600" : "border-gray-300"}`}
           placeholder={placeholder}
           onChange={onChange}
         />
