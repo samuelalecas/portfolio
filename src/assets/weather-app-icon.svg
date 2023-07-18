@@ -3,9 +3,9 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#E6FFE8;stroke:#0F1942;stroke-width:16.6667;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:66.6667;}
-	.st1{fill:#FFFFFF;stroke:#0F1942;stroke-width:16.6667;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:66.6667;}
-	.st2{fill:#CAD1FC;stroke:#0F1942;stroke-width:16.6667;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:66.6667;}
+	.st0{fill:#E6FFE8;stroke:#0F1942;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:66.6667;}
+	.st1{fill:#FFFFFF;stroke:#0F1942;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:66.6667;}
+	.st2{fill:#CAD1FC;stroke:#0F1942;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:66.6667;}
 	.st3{fill:#011241;}
 </style>
 <path class="st0" d="M317.5,145.2C290.1,90.1,223.2,67.6,168.1,95s-77.6,94.2-50.2,149.3c9.4,19,24.1,34.9,42.2,45.9
