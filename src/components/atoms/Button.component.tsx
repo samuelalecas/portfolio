@@ -19,6 +19,10 @@ export const Button: React.FC<ButtonProps> = ({ name, variant="default", width="
         style = "border-2 border-blue-950 px-3 py-1 rounded-md font-bold text-blue-950 hover:bg-blue-950 hover:text-green-300 transition duration-300 ease-in-out";
     }
 
+    if (variant === "link" ){
+      style = "font-medium font-blue-950 hover:text-green-300 hover:underline";
+    }
+
   return (
     <button className={style + " w-" + width} onClick={onClick}>
       {name}

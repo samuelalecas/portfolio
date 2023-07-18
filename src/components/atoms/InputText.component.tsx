@@ -3,7 +3,7 @@ import React from "react";
 // Interfaz donde se definen todas las propiedades del componente
 interface InputProps {
   type?: "number" | "password" | "text",
-  label: string,
+  label?: string,
   name?: string,
   value?: string,
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
@@ -16,7 +16,7 @@ interface InputProps {
 const InputText: React.FC<InputProps> = ({ type="text", label, name, value, onChange, placeholder, variant, error=false, errorMsg }) => {
   // Variables para almacenar las clases en Tailwind
   let labelStyle = "block mb-2 text-sm font-medium text-blue-950";
-  let inputStyle = "bg-white border-b-2 border-green-300 text-blue-950 text-sm p-2 w-full";
+  let inputStyle = "bg-white border-b-2 border-green-300 text-blue-950 text-sm p-2 w-full placeholder-blue-950 pl-0";
 
   // Condicional para cambiar el estilo del borde
   if (variant === "dashed") {

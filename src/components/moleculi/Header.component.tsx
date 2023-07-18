@@ -10,6 +10,7 @@ export const Header = () => {
     <header className="w-full h-20 border-b-2 border-violet-200 flex justify-center items-center fixed bg-white z-10">
       <div className="w-[900px] grid grid-cols-6 md:grid-cols-12">
         <div className="col-span-5 border-none ml-4 md:border-solid border-r-2 border-violet-200 flex items-center">
+          <button onClick={() => navigate("/")} className="flex items-center">
           <img
             src="src/assets/avatar.png"
             alt="Avatar"
@@ -18,6 +19,7 @@ export const Header = () => {
           <h1 className="ml-2 text-lg font-medium text-blue-950">
             Samuel Alegre
           </h1>
+          </button>
         </div>
         <div className="hidden md:block col-span-5">
           <ul className="flex h-full justify-center items-center gap-4 ">
