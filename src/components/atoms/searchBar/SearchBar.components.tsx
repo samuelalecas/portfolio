@@ -3,7 +3,7 @@ import React from "react";
 export interface SearchBarInterface {
   location: string;
   onSubmit: () => void;
-  onChange: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const SearchBar: React.FC<SearchBarInterface> = ({

@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   return (
     <button onClick={onClick}>
-      <article className="flex flex-col items-center relative col-span-1 h-64 border-2 border-blue-950 rounded-md hover:scale-105 transition duration-100 opacity-90 hover:opacity-100 hover:shadow-xl">
+      <article className="flex flex-col items-center relative col-span-1 h-64 border-2 border-blue-950 rounded-md hover:scale-105 transition duration-200 opacity-90 hover:opacity-100 hover:shadow-xl">
         <div className="absolute bottom-2 left-2 p-2">
           <h1 className="text-blue-950 font-medium text-xl mb-2">{title}</h1>
           <h2 className="text-sm text-blue-950">{description}</h2>

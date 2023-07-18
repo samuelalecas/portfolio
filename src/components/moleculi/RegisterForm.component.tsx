@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState, useContext } from 'react';
 import { Button } from "../atoms/button/Button.component";
 import InputText from "../atoms/inputText/InputText.component";
 import { useForm } from "../../hooks/useForm.hook";
@@ -12,57 +12,71 @@ const emailRegex = new RegExp(
 // Interfaz a modo de plantilla para los valores de la persona
 interface FormI {
   name: string;
-  surname: string;
+  password: string;
   email: string;
-  password1: string;
-  password2: string;
+  role: string;
 }
 
 // Se inicializa la interfaz con valores vacíos
 const initialFormState: FormI = {
   name: "",
-  surname: "",
   email: "",
-  password1: "",
-  password2: "",
+  password: '',
+  role: 'ADMIN_ROLE',
 };
 
+const isValidEmail = (email: string):boolean => {
+  const isValid = emailRegex.test(email);
+  return isValid;
+}
+
 export const RegisterForm = () => {
+
   // Estado para almacenar la información del usuario
   const { formData, onChange, resetForm } = useForm<FormI>(initialFormState);
 
   // Para el manejo de errores
-  const [error, setError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+
+  const onSubmit = async (e?: FormEvent) => {
+    e?.preventDefault(); // Para evitar la recarga de la página
+    try {
+      const resp = await fetch(
+        "https://noderestserver-production-241a.up.railway.app/api/v1/users/",
+        {
+          method: "POST",
+          headers: { "content-type": "application/json; charset=UTF-8" },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await resp.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleClick = (e?: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
-    // Manejo de error por si una contraseña no coincide con otra
-    setError(formData.password1 !== formData.password2 ? true : false);
 
-    // Manejo de error si el correo es incorrecto
-    const isValidEmail = emailRegex.test(formData.email);
-    setEmailError(!isValidEmail);
+    if (isValidEmail(formData.email)){
+      onSubmit();
+    } else {
+      setEmailError(true);
+    }
   };
 
   const handleReset = () => {
     resetForm();
-    setError(false);
     setEmailError(false);
   };
 
   return (
-    <form action="" className="flex flex-col gap-4">
+    <form action="" className="flex flex-col gap-4" onSubmit={handleClick}>
       <InputText
         name="name"
         placeholder="Nombre"
         value={formData.name}
-        onChange={(e) => onChange(e)}
-      />
-      <InputText
-        name="surname"
-        placeholder="Apellidos"
-        value={formData.surname}
         onChange={(e) => onChange(e)}
       />
       <InputText
@@ -75,23 +89,14 @@ export const RegisterForm = () => {
       />
       <InputText
         type="password"
-        name="password1"
+        name="password"
         placeholder="Contraseña"
-        value={formData.password1}
+        value={formData.password}
         onChange={(e) => onChange(e)}
       />
 
-      <InputText
-        type="password"
-        name="password2"
-        placeholder="Repetir contraseña"
-        value={formData.password2}
-        error={error}
-        onChange={(e) => onChange(e)}
-        errorMsg={"Ambas contraseñas deben ser idénticas"}
-      />
       <div className="flex gap-2 mt-4">
-        <Button name="OK" onClick={handleClick} />
+        <Button name="OK" type="submit"/>
         <Button name="Reset" variant="outlined" onClick={handleReset} />
       </div>
     </form>

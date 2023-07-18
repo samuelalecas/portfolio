@@ -5,9 +5,10 @@ export interface ButtonProps {
   variant?: string;
   width?: string;
   onClick?: () => void;
+  type?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ name, variant="default", width="full", onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ name, variant="default", width="full", onClick, type }) => {
   
     let style = "";
 
@@ -24,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({ name, variant="default", width="
     }
 
   return (
-    <button className={style + " w-" + width} onClick={onClick}>
+    <button type={type === "submit" ? type : "button"}className={style + " w-" + width} onClick={onClick}>
       {name}
     </button>
   );
