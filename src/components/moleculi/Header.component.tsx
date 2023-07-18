@@ -1,6 +1,6 @@
 import { FiMoon } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Button } from "../atoms/Button.component";
+import { Button } from "../atoms/button/Button.component";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {

@@ -3,6 +3,7 @@ import Landing from "../pages/Landing"
 import NotFoundPage from "../pages/NotFoundPage"
 import Login from "../pages/Login"
 import Register from '../pages/Register';
+import WeatherApp from "../pages/WeatherApp";
 
 export const AppRoutes = () => {
   return (
@@ -10,6 +11,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Landing/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/weather-app" element={<WeatherApp/>} />
         <Route path="*" element={<NotFoundPage/>} />
     </Routes>
   )

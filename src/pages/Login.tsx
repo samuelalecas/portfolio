@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "../components/atoms/Button.component";
+import { Button } from "../components/atoms/button/Button.component";
 import { CenterLayout } from "../components/layouts/CenterLayout.component";
 import { Footer } from "../components/moleculi/Footer.component";
 import { Header } from "../components/moleculi/Header.component";

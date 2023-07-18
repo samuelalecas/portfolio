@@ -1,6 +1,6 @@
 import { CenterLayout } from "../layouts/CenterLayout.component";
-import InputText from "../atoms/InputText.component";
-import { Button } from "../atoms/Button.component";
+import InputText from "../atoms/inputText/InputText.component";
+import { Button } from "../atoms/button/Button.component";
 
 export const Contact = () => {
   return (

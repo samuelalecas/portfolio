@@ -1,4 +1,4 @@
-import { Button } from "../atoms/Button.component";
+import { Button } from "../atoms/button/Button.component";
 import { CenterLayout } from "../layouts/CenterLayout.component";
 
 export const Hero = () => {
