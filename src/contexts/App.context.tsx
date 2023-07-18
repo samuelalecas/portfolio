@@ -18,12 +18,17 @@ interface AppContextInterface {
   setUser: (value: User) => void;
 }
 
+// Se crea la variable donde se almacena la creación del contexto, usando la interfaz definida
 export const AppContext = React.createContext({} as AppContextInterface);
 
+// Esta función "provee" los estados almacenados de manera global
 export const Provider = ({ children }: any) => {
+  // En este estado sólo se almacena el token
   const [token, setToken] = useState<string>(
     localStorage.getItem("token") || ""
   );
+
+  // Y en este todo lo referente al usuario (devuelto al loguear)
   const [user, setUser] = useState<User | null>(
     (JSON.parse(localStorage.getItem("user") || "{}") as User) || null
   );
@@ -35,5 +40,6 @@ export const Provider = ({ children }: any) => {
     setUser,
   };
 
+  // Aquí se devuelve la etiqueta con la propiedad value, que lleva todos los estados y funciones de cada useState
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 };

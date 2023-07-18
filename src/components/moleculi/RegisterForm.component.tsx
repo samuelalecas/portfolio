@@ -2,6 +2,7 @@ import { FormEvent, useState, useContext } from 'react';
 import { Button } from "../atoms/button/Button.component";
 import InputText from "../atoms/inputText/InputText.component";
 import { useForm } from "../../hooks/useForm.hook";
+import { useNavigate } from 'react-router-dom';
 
 // Para verificar un correo electrónico
 const emailRegex = new RegExp(
@@ -32,6 +33,8 @@ const isValidEmail = (email: string):boolean => {
 
 export const RegisterForm = () => {
 
+  const navigate = useNavigate();
+
   // Estado para almacenar la información del usuario
   const { formData, onChange, resetForm } = useForm<FormI>(initialFormState);
 
@@ -50,6 +53,9 @@ export const RegisterForm = () => {
         }
       );
       const data = await resp.json();
+      if (!data?.errors){
+        navigate("/login");
+      }
       console.log(data);
     } catch (error) {
       console.log(error);

@@ -54,7 +54,7 @@ export const LoginForm = () => {
         localStorage.setItem("user", JSON.stringify(data.user));
         navigate("/weather-app");
       } else {
-        throw new Error;
+        throw new Error();
       }
     } catch (error) {
       console.log(error);

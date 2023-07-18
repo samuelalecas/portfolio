@@ -3,7 +3,7 @@ import { AppContext } from "../contexts/App.context";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const ProtectedRoute = () => {
-  const { token, setToken } = useContext(AppContext);
+  const { token } = useContext(AppContext);
 
   const validate = async () => {
     console.log('entra')
