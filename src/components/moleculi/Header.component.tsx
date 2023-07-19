@@ -2,6 +2,7 @@ import { FiMoon } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Button } from "../atoms/button/Button.component";
 import { useNavigate } from "react-router-dom";
+import avatarImg from "../../assets/avatar.png"
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export const Header = () => {
         <div className="col-span-5 border-none ml-4 md:border-solid border-r-2 border-violet-200 flex items-center">
           <button onClick={() => navigate("/")} className="flex items-center">
           <img
-            src="src/assets/avatar.png"
+            src={avatarImg}
             alt="Avatar"
             className="w-14 rounded-full m-2"
           />

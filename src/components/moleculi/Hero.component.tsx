@@ -1,5 +1,6 @@
 import { Button } from "../atoms/button/Button.component";
 import { CenterLayout } from "../layouts/CenterLayout.component";
+import fullBodyAvatarImg from "../../assets/avatar-full-body.png";
 
 export const Hero = () => {
   return (
@@ -22,7 +23,7 @@ export const Hero = () => {
             <div className="w-1/2 flex justify-center items-center">
               <img
                 className="h-72"
-                src="src/assets/avatar-full-body.png"
+                src={fullBodyAvatarImg}
                 alt="Ilustración de Samuel Alegre de cuerpo entero"
               />
             </div>
