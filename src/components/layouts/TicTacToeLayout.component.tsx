@@ -14,7 +14,7 @@ const TicTacToeLayout: React.FC<TicTacToeLayoutProps> = ({children, turn}) => {
       <div className="flex flex-wrap p-5 w-[26.5rem] bg-white shadow-lg">
         {children}
       </div>
-      <p className="text-2xl font-bold mt-4">{turn}'s TURN</p>
+      <p className="text-2xl font-medium mt-4 text-blue-900">{turn}'s TURN</p>
     </div>
     </>
   );

@@ -47,7 +47,7 @@ const TicTacToe = () => {
   // FUNCIONAMIENTO DEL JUEGO
   // ------------------------------------------------------
 
-  const isAWinnerComb: Array<any> = [
+  const isAWinnerComb: number[][] = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -58,16 +58,17 @@ const TicTacToe = () => {
     [2, 4, 6],
   ];
   const isAWinner = (player: string) => {
+    // Recorre el array
     for (let combination of isAWinnerComb) {
-      for (let index in combination) {
-        if (gameboard[+index] !== player) {
-          return false;
-        }
-      }
-    }
 
-    return true;
-  };
+      let found: number[] | undefined = [];
+      // Filtra el array
+      found = combination.filter( index => gameboard[index] === player);
+      // Si devuelve los tres valores, es ganador.
+      if (found.length === 3) return true;
+      }
+      return false;
+    }
 
   // ----------------------------------------------
 
@@ -79,7 +80,7 @@ const TicTacToe = () => {
           <GameboardButton
             key={index}
             id={index.toString()}
-            text={box}
+            player={box}
             onClick={() => handleClick(index)}
           />
         ))}
