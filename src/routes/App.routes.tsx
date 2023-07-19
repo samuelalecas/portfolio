@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import WeatherApp from "../pages/WeatherApp";
 import { ProtectedRoute } from "./Protected.route";
+import TicTacToe from "../pages/TicTacToe";
 
 export const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route element={<ProtectedRoute />}>
         <Route path="/weather-app" element={<WeatherApp />} />
+        <Route path="/tictactoe" element={<TicTacToe />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import gameboardButton from "../components/atoms/gameboardButton/gameboardButton.component.tsx";
 import TicTacToeLayout from "../components/layouts/TicTacToeLayout.component.tsx";
+import GameboardButton from "../components/atoms/gameboardButton/GameboardButton.component.tsx"
+import { Header } from "../components/moleculi/Header.component.tsx";
 
 const TicTacToe = () => {
   // FUNCIONAMIENTO DEL TABLERO
@@ -59,7 +60,7 @@ const TicTacToe = () => {
   const isAWinner = (player: string) => {
     for (let combination of isAWinnerComb) {
       for (let index in combination) {
-        if (gameboard[index] !== player) {
+        if (gameboard[+index] !== player) {
           return false;
         }
       }
@@ -72,9 +73,10 @@ const TicTacToe = () => {
 
   return (
     <>
+    <Header/>
       <TicTacToeLayout turn={turn}>
         {gameboard.map((box, index) => (
-          <gameboardButton
+          <GameboardButton
             key={index}
             id={index.toString()}
             text={box}

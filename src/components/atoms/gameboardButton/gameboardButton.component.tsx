@@ -6,10 +6,10 @@ interface buttonProps {
   onClick?: () => void
 }
 
-const gameboardButton: React.FC<buttonProps> = ({text, id, onClick}) => {
+const GameboardButton: React.FC<buttonProps> = ({text, id, onClick}) => {
   let buttonStyle =
     "w-32 h-32 border";
   return <button id={id} onClick={onClick} className={buttonStyle}>{text}</button>;
 };
 
-export default gameboardButton;
+export default GameboardButton;
