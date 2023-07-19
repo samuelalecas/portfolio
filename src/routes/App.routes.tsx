@@ -15,8 +15,8 @@ export const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route element={<ProtectedRoute />}>
         <Route path="/weather-app" element={<WeatherApp />} />
-        <Route path="/tictactoe" element={<TicTacToe />} />
       </Route>
+      <Route path="/tictactoe" element={<TicTacToe />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
