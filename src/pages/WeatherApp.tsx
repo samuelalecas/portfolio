@@ -161,7 +161,7 @@ const WeatherApp = () => {
   // const [apiData, setaApiData] = useState<Weather | null>(null);
   const [location, setLocation] = useState<string>("Cáceres");
 
-  const { data, hasError, isFetching, fetchData } = useFetch<Weather>({
+  const { data, fetchData } = useFetch<Weather>({
     url: `https://api.weatherapi.com/v1/forecast.json?key=42da7e4d019546aaa4d82110231307&q=${location}&days=5&aqi=no&alerts=no&lang=es`,
   });
 

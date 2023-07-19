@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../contexts/App.context";
 import { Navigate, Outlet } from "react-router-dom";
 
