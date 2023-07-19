@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Landing from "../pages/Landing";
 import NotFoundPage from "../pages/NotFoundPage";
 import Login from "../pages/Login";
@@ -11,7 +11,6 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/portfolio" element={<Navigate to="/"/>} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route element={<ProtectedRoute />}>
