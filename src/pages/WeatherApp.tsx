@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { WeatherIcon } from "../components/atoms/weatherIcon/WeatherIcon.components";
-import WeatherWindow from "../components/atoms/weatherWindow/WeatherWindow.component";
+import WeatherCard from "../components/atoms/weatherWindow/WeatherCard.component";
 import { SearchBar } from "../components/atoms/searchBar/SearchBar.components";
 import { useFetch } from "../hooks/useFetch.hook";
 import { Header } from "../components/moleculi/Header.component";
@@ -168,51 +168,54 @@ const WeatherApp = () => {
   return (
     <>
       <Header />
-      <div
-        className={`flex flex-col w-screen h-screen justify-center items-center bg-gray-900`}
+      <main
+        className={`flex flex-col w-screen h-full justify-center items-center bg-gray-900`}
       >
-        <h1 className="text-2xl text-white mb-4">
-          Hola, {user ? user.name : ""}
-        </h1>
+        <section className="w-full mt-32">
+          <h1 className="text-2xl text-white mb-4">
+            Hola, {user ? user.name : ""}
+          </h1>
 
-        <div className="bg-gray-700 text-white rounded-md p-8 text-center relative pt-12 mb-12">
-          <WeatherIcon condition={data?.current.condition.icon} />
-          <p className="text-2xl font-light">{data?.location.name}</p>
-          <p className="text-sm mb-2">{data?.location.country}</p>
-          <p className="text-7xl font-thin mb-3">
-            {data?.current.temp_c.toFixed(0)}
-            <span className="text-2xl absolute">º</span>
-          </p>
-          <p className="text-sm mb-2">{data?.current.condition.text}</p>
-          <div className="text-sm flex gap-2 justify-center mb-4">
-            <p>
-              Min: {data?.forecast.forecastday[0].day.mintemp_c.toFixed(0)}º
+          <article className="bg-gray-700 text-white rounded-md p-8 text-center relative pt-12 mb-12">
+            <WeatherIcon condition={data?.current.condition.icon} />
+            <p className="text-2xl font-light">{data?.location.name}</p>
+            <p className="text-sm mb-2">{data?.location.country}</p>
+            <p className="text-7xl font-thin mb-3">
+              {data?.current.temp_c.toFixed(0)}
+              <span className="text-2xl absolute">º</span>
             </p>
-            <p>
-              Max: {data?.forecast.forecastday[0].day.maxtemp_c.toFixed(0)}º
-            </p>
-          </div>
-          <div>
-            <SearchBar
-              location={location}
-              onSubmit={fetchData}
-              onChange={(e) => setLocation(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="flex gap-4">
-          {data?.forecast.forecastday.map((day) => (
-            <WeatherWindow
-              key={day.date}
-              icon={day.day.condition.icon}
-              date={day.date}
-              condition={day.day.condition.text}
-              minTemp={+day.day.mintemp_c}
-              maxTemp={+day.day.maxtemp_c}
-            />
-          ))}
-        </div>
-      </div>
+            <p className="text-sm mb-2">{data?.current.condition.text}</p>
+            <div className="text-sm flex gap-2 justify-center mb-4">
+              <p>
+                Min: {data?.forecast.forecastday[0].day.mintemp_c.toFixed(0)}º
+              </p>
+              <p>
+                Max: {data?.forecast.forecastday[0].day.maxtemp_c.toFixed(0)}º
+              </p>
+            </div>
+            <div>
+              <SearchBar
+                location={location}
+                onSubmit={fetchData}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </div>
+          </article>
+
+          <section className="flex flex-col w-full">
+            {data?.forecast.forecastday.map((day) => (
+              <WeatherCard
+                key={day.date}
+                icon={day.day.condition.icon}
+                date={day.date}
+                condition={day.day.condition.text}
+                minTemp={+day.day.mintemp_c}
+                maxTemp={+day.day.maxtemp_c}
+              />
+            ))}
+          </section>
+        </section>
+      </main>
     </>
   );
 };

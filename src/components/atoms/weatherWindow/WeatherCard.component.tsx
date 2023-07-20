@@ -10,7 +10,7 @@ export interface WeatherWindowProps {
   maxTemp: number;
 }
 
-const WeatherWindow: React.FC<WeatherWindowProps> = ({
+const WeatherCard: React.FC<WeatherWindowProps> = ({
   key,
   icon,
   name,
@@ -20,7 +20,7 @@ const WeatherWindow: React.FC<WeatherWindowProps> = ({
   maxTemp,
 }) => {
   return (
-    <div data-id={key} className="flex flex-col">
+    <div data-id={key} className="w-full flex flex-col items-center">
       <h2 className="text-white text-center mb-2">{date}</h2>
       <div className="bg-gray-700 text-white rounded-md px-6 pt-4 text-center relative w-40 h-44 flex flex-col items-center">
         <WeatherIcon style="center" condition={icon} />
@@ -35,4 +35,4 @@ const WeatherWindow: React.FC<WeatherWindowProps> = ({
   );
 };
 
-export default WeatherWindow;
+export default WeatherCard;
