@@ -22,7 +22,7 @@ const WeatherCard: React.FC<WeatherWindowProps> = ({
   return (
     <div data-id={key} className="w-full flex flex-col items-center">
       <h2 className="text-white text-center mb-2">{date}</h2>
-      <div className="bg-gray-700 text-white rounded-md px-6 pt-4 text-center relative w-40 h-44 flex flex-col items-center">
+      <div className="bg-gray-700 text-white rounded-md px-6 pt-4 text-center relative w-full md:w-72 lg:w-40 h-36 lg:h-44 flex flex-col items-center">
         <WeatherIcon style="center" condition={icon} />
         <p className="text-2xl font-light">{name}</p>
         <p className="text-sm mb-2">{condition}</p>

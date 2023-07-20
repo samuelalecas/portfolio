@@ -16,12 +16,12 @@ export const SearchBar: React.FC<SearchBarInterface> = ({
       <input
         type="text"
         value={location}
-        className="bg-gray-600 rounded-md text-sm py-1 px-2 mr-2 w-36"
+        className="w-full p-4 md:py-1 md:px-2 mr-2 mb-2 md:w-36 bg-gray-600 rounded-md text-sm"
         onChange={onChange}
       />
       <button
         type="submit"
-        className="bg-gray-900 text-white hover:bg-gray-200 hover:text-gray-800 px-2 py-1 rounded-md text-sm transition duration-200"
+        className="w-full md:w-14 p-3 md:px-2 md:py-1 bg-gray-900 text-white hover:bg-gray-200 hover:text-gray-800 rounded-md text-sm transition duration-200"
       >
         Buscar
       </button>
