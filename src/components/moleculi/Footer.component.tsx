@@ -1,13 +1,13 @@
 import { CenterLayout } from "../layouts/CenterLayout.component";
 
-export const Footer = () => {
+interface FooterProps {
+  fixed?: boolean;
+}
+
+export const Footer: React.FC<FooterProps> = ({fixed}) => {
   return (
-    <section>
-      <CenterLayout width="900" bgColor="bg-blue-950">
-        <div className="w-full p-4 py-12 flex justify-center items-center h-10">  
+    <footer className=" fixed bottom-0 top-auto w-full h-12 bg-blue-950 flex justify-center items-center">
           <p className="text-white">Samuel Alegre © 2023</p>
-        </div>
-      </CenterLayout>
-    </section>
+    </footer>
   );
 };
