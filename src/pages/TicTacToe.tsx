@@ -1,24 +1,19 @@
 import { useEffect, useState } from "react";
 import GameboardButton from "../components/atoms/gameboardButton/GameboardButton.component.tsx";
 import { Header } from "../components/moleculi/Header.component.tsx";
+import { WinnerWindow } from "../components/atoms/modaleWindow/modaleWindow.component.tsx";
 
 const TicTacToe = () => {
   // FUNCIONAMIENTO DEL TABLERO
   // ------------------------------------------------------
   // Almacenamos el array en un nuevo array
 
-  const [gameboard, setGameboard] = useState<string[]>([
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ]);
+  const emptyGameboard = ["", "", "", "", "", "", "", "", ""];
+
+  const [gameboard, setGameboard] = useState<string[]>(emptyGameboard);
   const [turn, setTurn] = useState<string>("X");
+  const [winner, setWinner] = useState<boolean>(false);
+  const [draw, setDraw] = useState<boolean>(false);
 
   const handleClick = (e: number) => {
     let array = gameboard;
@@ -30,13 +25,13 @@ const TicTacToe = () => {
       array[e] = turn;
       // Se le pasa el array directamente por el setGameboard
       //setGameboard(array);
-      localStorage.setItem('gameboard', JSON.stringify(array))
+      localStorage.setItem("gameboard", JSON.stringify(array));
       console.log(gameboard);
 
-      // Comprueba si ha ganado
-      if (isAWinner(turn)) {
-        console.log("Winner!!");
-        setTurn("Winner");
+      if (isDrawGame(gameboard)) {
+        setDraw(true);
+      } else if (isAWinner(turn)) {
+        setWinner(true);
       } else {
         // Se cambia el turno
         setTurn(turn === "X" ? "O" : "X");
@@ -69,33 +64,48 @@ const TicTacToe = () => {
     return false;
   };
 
+  const isDrawGame = (gameboard: string[]) => {
+    let found: string[] | undefined;
+    found = gameboard.filter((character) => character === "");
+    return found.length === 0;
+  };
+
   // ----------------------------------------------
 
   // LOCAL STORAGE
 
-  // Con esto, actualizamos el localStorage y se sincroniza en 
+  // Con esto, actualizamos el localStorage y se sincroniza en
   // todas las pestañas cada vez que se almacena en localStorage
-  
-  useEffect(() => {
 
+  useEffect(() => {
     const saveGameboard = () => {
-      // Setea dentro del gameboard 
+      // Setea dentro del gameboard
       setGameboard(JSON.parse(localStorage.getItem("gameboard") || "{}"));
-    }
+    };
 
     window.addEventListener("storage", saveGameboard);
 
-    return () => {      
-      window.removeEventListener('storage', saveGameboard)
+    return () => {
+      window.removeEventListener("storage", saveGameboard);
     };
   }, []);
 
   // ------------------------------------------------
 
+  const handleReset = () => {
+    setGameboard(emptyGameboard);
+    setWinner(false);
+    setDraw(false);
+  };
+
   return (
     <>
-      <Header/>
-      {/* <WinnerWindow /> */}
+      <Header />
+      <div className="relative">
+        {draw ? <WinnerWindow type="draw" onClick={handleReset} /> : <></>}
+        {winner ? <WinnerWindow winner={turn} onClick={handleReset} /> : <></>}
+      </div>
+
       <div className="flex flex-col justify-center items-center h-screen bg-slate-100 p-4">
         <div className="w-full sm:w-[26.5rem] grid grid-cols-3 grid-rows-3 sm:flex sm:flex-wrap sm:p-5 bg-white shadow-lg">
           {gameboard.map((box, index) => (
@@ -107,7 +117,11 @@ const TicTacToe = () => {
             />
           ))}
         </div>
-        <p className="text-2xl font-medium mt-4 text-blue-900">{turn}'s TURN</p>
+        <div className="h-24 pt-4">
+          <p className="text-2xl font-medium text-blue-900">
+            {winner || draw ? "" : `${turn}'s Turn!`}
+          </p>
+        </div>
       </div>
     </>
   );
