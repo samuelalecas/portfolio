@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { WeatherIcon } from "../components/atoms/weatherIcon/WeatherIcon.components";
-import WeatherCard from "../components/atoms/weatherWindow/WeatherCard.component";
+import WeatherCard from "../components/atoms/weatherCard/WeatherCard.component";
 import { SearchBar } from "../components/atoms/searchBar/SearchBar.components";
 import { useFetch } from "../hooks/useFetch.hook";
 import { Header } from "../components/moleculi/Header.component";
@@ -210,7 +210,7 @@ const WeatherApp = () => {
           </h2>
 
           {/* Sección con 5 tarjetas de previsión */}
-          <section className="flex flex-col lg:flex-row w-full lg:w-2/3 gap-4 mb-20">
+          <section className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 w-full lg:w-2/3 mb-20">
             {data?.forecast.forecastday.map((day) => (
               <WeatherCard
                 key={day.date}

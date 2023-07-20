@@ -16,7 +16,7 @@ export const SearchBar: React.FC<SearchBarInterface> = ({
       <input
         type="text"
         value={location}
-        className="w-full p-4 md:py-1 md:px-2 mr-2 mb-2 md:w-36 bg-gray-600 rounded-md text-sm"
+        className="w-full mt-2 p-3 md:py-1 md:px-2 mr-2 mb-2 md:w-36 bg-gray-600 rounded-md text-sm"
         onChange={onChange}
       />
       <button
