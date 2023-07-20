@@ -9,14 +9,14 @@ interface buttonProps {
 }
 
 const GameboardButton: React.FC<buttonProps> = ({player, id, onClick}) => {
-  let buttonStyle = "w-32 h-32 border";
+  let buttonStyle = "aspect-square sm:w-32 sm:h-32 border";
 
   let playerCharacter: JSX.Element = <></>;
 
   if (player === "X") {
-    playerCharacter = <img src={xIcon} alt="X" />
+    playerCharacter = <img src={xIcon} className="w-full" alt="X" />
   } else if (player === "O") {
-    playerCharacter = <img src={oIcon} alt="O" />
+    playerCharacter = <img src={oIcon} className="w-full" alt="O" />
   } else {
     playerCharacter;
   }

@@ -96,8 +96,8 @@ const TicTacToe = () => {
     <>
       <Header/>
       {/* <WinnerWindow /> */}
-      <div className="flex flex-col justify-center items-center h-screen bg-slate-100">
-        <div className="flex flex-wrap p-5 w-[26.5rem] bg-white shadow-lg">
+      <div className="flex flex-col justify-center items-center h-screen bg-slate-100 p-4">
+        <div className="w-full sm:w-[26.5rem] grid grid-cols-3 grid-rows-3 sm:flex sm:flex-wrap sm:p-5 bg-white shadow-lg">
           {gameboard.map((box, index) => (
             <GameboardButton
               key={index}
