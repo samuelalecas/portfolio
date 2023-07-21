@@ -1,4 +1,4 @@
-import { BiLogoJavascript, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
+import { BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
 import React from "react";
 
 export interface ProjectProps {

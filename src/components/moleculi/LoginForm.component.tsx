@@ -80,7 +80,7 @@ export const LoginForm = () => {
         value={formData.password}
         onChange={(e) => onChange(e)}
       />
-      <Button type="submit" name="Enviar" width="36" />
+      <Button type="submit" name="Enviar" width="full sm:w-24" />
     </form>
   );
 };
