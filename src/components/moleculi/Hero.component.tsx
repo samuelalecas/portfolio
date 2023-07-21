@@ -29,7 +29,7 @@ export const Hero = () => {
             </div>
           </div>
           <div className="block md:hidden">
-            <Button name="¡Escríbeme!" width="full" />
+          <Link to="#contact" smooth><Button name="¡Escríbeme!" width="full"/></Link>
           </div>
         </div>
       </CenterLayout>

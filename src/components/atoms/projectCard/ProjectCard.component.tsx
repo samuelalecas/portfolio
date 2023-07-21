@@ -1,4 +1,4 @@
-import { BiLogoJavascript, BiLogoReact } from "react-icons/bi";
+import { BiLogoJavascript, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
 import React from "react";
 
 export interface ProjectProps {
@@ -22,8 +22,9 @@ export const ProjectCard: React.FC<ProjectProps> = ({
           <h2 className="text-left text-sm text-blue-950">{description}</h2>
         </div>
         <div className="absolute top-3 right-2 flex justify-end opacity-80">
-          <BiLogoJavascript className="text-blue-950" fontSize="1.5rem" />
+          <BiLogoTypescript className="text-blue-950" fontSize="1.5rem" />
           <BiLogoReact className="text-blue-950" fontSize="1.5rem" />
+          <BiLogoTailwindCss className="text-blue-950" fontSize="1.5rem" />
         </div>
         <img
           src={img}

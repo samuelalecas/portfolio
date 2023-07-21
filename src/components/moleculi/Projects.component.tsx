@@ -4,6 +4,7 @@ import { CenterLayout } from "../layouts/CenterLayout.component";
 
 import weatherImg from '../../assets/weather-app-icon.svg';
 import ticTacToeImg from '../../assets/tictactoe-icon.svg';
+import todoImg from '../../assets/todo-icon.svg';
 import placeholderImg from '../../assets/placeholder-icon.svg';
 
 export const Projects = () => {
@@ -18,7 +19,7 @@ export const Projects = () => {
             <ProjectCard title="Weather App" onClick={()=> navigate("/weather-app")} img={weatherImg} description="Comprueba qué tiempo hará hoy."/>
             <ProjectCard title="Tic-Tac-Toe" onClick={()=> navigate("/tictactoe")} img={ticTacToeImg} description="Demuestra quién manda aquí."/>
             {/* <ProjectCard title="Calculator" onClick={()=> navigate("/weather-app")} img={placeholderImg} description="¿Cuánto serán dos más dos menos uno?"/> */}
-            <ProjectCard title="To-Do List" onClick={()=> navigate("/weather-app")} img={placeholderImg} description="No se te escapará ni una sola tarea."/>
+            <ProjectCard title="To-Do List" onClick={()=> navigate("/weather-app")} img={todoImg} description="No se te escapará ni una sola tarea."/>
           </div>
 
         </div>
