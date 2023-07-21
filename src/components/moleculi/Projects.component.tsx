@@ -14,10 +14,10 @@ export const Projects = () => {
         <div className="w-full p-4 py-8 flex flex-col">
           <h1 className="font-display text-4xl mb-6 text-blue-950">Projects</h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            <ProjectCard title="Weather App" onClick={()=> navigate("/weather-app")} img={weatherImg} description="Comprueba qué tiempo hará hoy y mañana."/>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <ProjectCard title="Weather App" onClick={()=> navigate("/weather-app")} img={weatherImg} description="Comprueba qué tiempo hará hoy."/>
             <ProjectCard title="Tic-Tac-Toe" onClick={()=> navigate("/tictactoe")} img={ticTacToeImg} description="Demuestra quién manda aquí."/>
-            <ProjectCard title="Calculator" onClick={()=> navigate("/weather-app")} img={placeholderImg} description="¿Cuánto serán dos más dos menos uno?"/>
+            {/* <ProjectCard title="Calculator" onClick={()=> navigate("/weather-app")} img={placeholderImg} description="¿Cuánto serán dos más dos menos uno?"/> */}
             <ProjectCard title="To-Do List" onClick={()=> navigate("/weather-app")} img={placeholderImg} description="No se te escapará ni una sola tarea."/>
           </div>
 

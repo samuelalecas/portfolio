@@ -1,5 +1,3 @@
-import InputText from "../atoms/inputText/InputText.component";
-import { Button } from "../atoms/button/Button.component";
 import { ContactForm } from "./ContactForm.component";
 
 export const Contact = () => {
