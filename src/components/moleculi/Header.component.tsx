@@ -18,7 +18,7 @@ export const Header = () => {
               alt="Avatar"
               className="w-14 rounded-full m-2"
             />
-            <h1 className="ml-2 text-lg font-medium text-blue-950">
+            <h1 className="font-display ml-2 text-2xl font-medium text-blue-950">
               Samuel Alegre
             </h1>
           </button>
@@ -56,8 +56,9 @@ export const Header = () => {
         <div className="col-span-2 h-full flex justify-center items-center border-l-2 border-violet-200">
           {/* <span className="hidden md:block mr-4"> */}
           {/* <span className="mr-4"> */}
+
             <Button
-              name="Login"
+              name={!!localStorage.user ? "Logout" : "Login"}
               variant="outlined"
               onClick={() => navigate("/login")}
               width="24"
