@@ -1,6 +1,7 @@
 import { Button } from "../atoms/button/Button.component";
 import { CenterLayout } from "../layouts/CenterLayout.component";
 import fullBodyAvatarImg from "../../assets/avatar-full-body.png";
+import { HashLink as Link} from "react-router-hash-link";
 
 export const Hero = () => {
   return (
@@ -12,12 +13,11 @@ export const Hero = () => {
               <h1 className="font-display text-[2.5rem] mb-4 text-blue-950">
                 Frontent Developer
               </h1>
-              <h2 className="text-sm mb-0 md:mb-8 w-3/4 text-blue-950">
-                Este es una web a modo de portafolio, quiero ver cómo queda para
-                subirla al GitHub.
+              <h2 className="text-sm mb-0 md:mb-8 w-full text-blue-950">
+                Desarrollador Frontend Junior y Diseñador gráfico Senior con experiencia en diseño de aplicaciones, animación y modelado 3D.
               </h2>
               <div className="hidden md:block">
-                <Button name="¡Llámame!" />
+                <Link to="#contact" smooth><Button name="¡Escríbeme!" /></Link>
               </div>
             </div>
             <div className="w-1/2 flex justify-center items-center">
@@ -29,7 +29,7 @@ export const Hero = () => {
             </div>
           </div>
           <div className="block md:hidden">
-            <Button name="¡Llámame!" width="full" />
+            <Button name="¡Escríbeme!" width="full" />
           </div>
         </div>
       </CenterLayout>
