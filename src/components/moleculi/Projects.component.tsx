@@ -12,7 +12,7 @@ export const Projects = () => {
     <section className="w-full border-t-2 border-violet-200">
       <CenterLayout width="900">
         <div className="w-full p-4 py-8 flex flex-col">
-          <h1 className="font-display text-4xl mb-6 text-blue-950">Projects</h1>
+          <h1 className="font-display text-4xl mb-6 text-blue-950">Proyectos</h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <ProjectCard title="Weather App" onClick={()=> navigate("/weather-app")} img={weatherImg} description="Comprueba qué tiempo hará hoy."/>

@@ -28,10 +28,10 @@ const TicTacToe = () => {
       localStorage.setItem("gameboard", JSON.stringify(array));
       console.log(gameboard);
 
-      if (isDrawGame(gameboard)) {
-        setDraw(true);
-      } else if (isAWinner(turn)) {
+      if (isAWinner(turn)) {
         setWinner(true);
+      } else if (isDrawGame(gameboard)) {
+        setDraw(true);
       } else {
         // Se cambia el turno
         setTurn(turn === "X" ? "O" : "X");

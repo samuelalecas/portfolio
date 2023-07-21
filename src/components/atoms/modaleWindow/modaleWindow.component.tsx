@@ -1,5 +1,6 @@
 import xIcon from "../../../assets/x-tictactoe.svg";
 import oIcon from "../../../assets/o-tictactoe.svg";
+import { Button } from "../button/Button.component";
 
 interface WinnerWindowPros {
   type?: string;
@@ -32,12 +33,7 @@ export const WinnerWindow: React.FC<WinnerWindowPros> = ({
     <>
       <div className="flex flex-col justify-center items-center bg-white aspect-square w-1/2 sm:w-[200px] rounded-lg shadow-xl absolute m-auto left-0 right-0 top-72 z-10">
         {window}
-        <button
-          onClick={onClick}
-          className="border-2 border-blue-950 px-3 py-1 rounded-md font-bold text-blue-950 hover:bg-blue-950 hover:text-green-300 transition duration-300 ease-in-out"
-        >
-          Play again
-        </button>
+        <Button onClick={onClick} name="Play again" variant="outlined" width="24"/>
       </div>
       {/* Fondo oscurecido */}
       <div className="bg-gray-200 w-screen h-screen absolute z-1 opacity-40"></div>
