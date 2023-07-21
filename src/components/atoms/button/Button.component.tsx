@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({ name, variant="default", width="
     }
 
     if (variant === "outlined") {
-        style = "border-2 border-blue-950 px-3 py-1 rounded-md font-medium text-blue-950 hover:bg-blue-950 hover:text-green-300 transition duration-300 ease-in-out";
+        style = "border-2 border-blue-950 px-2 py-1 rounded-md font-medium text-blue-950 hover:bg-blue-950 hover:text-green-300 transition duration-300 ease-in-out";
     }
 
     if (variant === "link" ){

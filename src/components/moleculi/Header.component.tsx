@@ -3,9 +3,20 @@
 import { Button } from "../atoms/button/Button.component";
 import { useNavigate } from "react-router-dom";
 import avatarImg from "../../assets/avatar.png";
+import { useContext } from 'react';
+import { AppContext } from "../../contexts/App.context";
 
 export const Header = () => {
   const navigate = useNavigate();
+
+  const {setUser, setToken} = useContext(AppContext);
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setToken("");
+    setUser(null);
+  }
 
   return (
     <header className="w-full h-20 border-b-2 border-violet-200 flex justify-center items-center fixed bg-white z-10">
@@ -59,8 +70,8 @@ export const Header = () => {
 
             <Button
               name={!!localStorage.user ? "Logout" : "Login"}
-              variant="outlined"
-              onClick={() => navigate("/login")}
+              variant={!!localStorage.user ?  "outlined" : "default" }
+              onClick={!!localStorage.user ? () => logout() : () => navigate("/login") }
               width="24"
             />
           {/* </span> */}
