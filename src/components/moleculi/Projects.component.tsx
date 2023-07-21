@@ -5,7 +5,7 @@ import { CenterLayout } from "../layouts/CenterLayout.component";
 import weatherImg from '../../assets/weather-app-icon.svg';
 import ticTacToeImg from '../../assets/tictactoe-icon.svg';
 import todoImg from '../../assets/todo-icon.svg';
-import placeholderImg from '../../assets/placeholder-icon.svg';
+// import placeholderImg from '../../assets/placeholder-icon.svg';
 
 export const Projects = () => {
   const navigate = useNavigate();

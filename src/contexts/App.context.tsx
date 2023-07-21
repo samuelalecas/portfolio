@@ -15,7 +15,7 @@ interface AppContextInterface {
   token: string;
   user: User | null;
   setToken: (value: string) => void; // Esto representa un set de un useState
-  setUser: (value: User) => void;
+  setUser: (value: User | null) => void;
 }
 
 // Se crea la variable donde se almacena la creación del contexto, usando la interfaz definida
