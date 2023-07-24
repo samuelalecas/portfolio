@@ -6,9 +6,9 @@ import { Footer } from "../components/moleculi/Footer.component";
 
 const TodoList = () => {
   const [itemList, setItemList] = useState("");
-  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("todoList")) || []);
+  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("todoList") || "{}") || []);
 
-  const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleClick = (e: React.FormEvent) => {
     e.preventDefault();
     let arrayBuffer = [...todoList];
     arrayBuffer.push(itemList);
@@ -23,6 +23,8 @@ const TodoList = () => {
     localStorage.setItem("todoList", JSON.stringify(arrayBuffer));
     setTodoList(arrayBuffer);
   };
+
+  let buttonStyle = `${itemList === "" ? "opacity-30" : "opacity-100 hover:bg-blue-800" } text-white bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 focus:outline-none`;
 
   return (
     <>
@@ -48,7 +50,8 @@ const TodoList = () => {
             /> */}
             <button
               type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              className={buttonStyle}
+              disabled={!itemList}
             >
               Añadir
             </button>
