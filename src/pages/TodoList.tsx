@@ -26,6 +26,10 @@ const TodoList = () => {
 
   let buttonStyle = `${itemList === "" ? "opacity-30" : "opacity-100 hover:bg-blue-800" } text-white bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 focus:outline-none`;
 
+  if (!localStorage.getItem("todoList")) {
+    localStorage.setItem("todoList", "[]");
+  }
+
   return (
     <>
     <Header />
