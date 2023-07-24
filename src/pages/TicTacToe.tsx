@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import GameboardButton from "../components/atoms/gameboardButton/GameboardButton.component.tsx";
 import { Header } from "../components/moleculi/Header.component.tsx";
 import { WinnerWindow } from "../components/atoms/modaleWindow/modaleWindow.component.tsx";
+import { Footer } from "../components/moleculi/Footer.component.tsx";
 
 const TicTacToe = () => {
   // FUNCIONAMIENTO DEL TABLERO
@@ -123,6 +124,7 @@ const TicTacToe = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
